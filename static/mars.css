@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+body {
+    overflow-x: hidden;
+    font-family: 'Pangolin', sans-serif;
+    color: #505962;
+}
+.offset:before{
+    display: block;
+    content:"";
+    height: 4rem;
+    margin-top: -4rem;
+
+}
+
+/*--- Navigation ---*/
+
+/* Set Navbar Properties */
+.navbar{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .9rem;
+    letter-spacing: .1rem;
+    background: rgba(0, 0, 0, .7)!important;
+}
+
+/* Add padding between the list elements */
+.navbar-nav li{
+    padding-right: 0.7rem;
+}
+
+/* Add padding to the links */
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+    padding-top: .8rem;
+}
+
+/* Add active-state color */
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: rgb(255, 115, 0);
+}
+
+/*--- Landing Page ---*/
+.home-inner {
+    background-image: url(marsh.jpg);
+}
+
+.caption {
+    width: 100%;
+    max-width:100%;
+    position: absolute;
+    top: 38%;
+    z-index: 1;
+    color: white;
+    text-transform: uppercase;
+}
+
+.caption2 {
+    width: 100%;
+    max-width:100%;
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+    color: white;
+    text-transform: uppercase;
+}
+
+.caption h1{
+    font-size: 3.8rem;
+    font-weight: 700;
+    letter-spacing: .1rem;
+    /* Horizontal, Vertical, Blurr radius */
+    text-shadow: 0.1rem 0.1rem .8rem black;
+    padding-bottom: 1rem;
+}
+
+.caption h3{
+    font-size: 2rem;
+    text-shadow: .1rem .1rem .9rem black;
+    padding-bottom: 1.6rem;
+}
+
+.btn-lg{
+    border-width: medium;
+    border-radius: 10%;
+    /* Vertical, horizontal */
+    padding: .6rem 1.3rem;
+    font-size: 1.1rem;
+}
+
+.btn-lg:hover {
+    background-color:rgb(226, 90, 0);
+    color: white;
+}
+
+/*--- Data --*/
+.feat_img{
+    max-width: 100%;
+}
+
+.jumbotron{
+    margin-bottom: 0;
+    padding: 2rem 0 3.5rem;
+    border-radius: 0;
+}
+
+.jumbotron h1{
+    padding-bottom: 1rem;
+    font-size: 2.4rem;
+}
+.jumbotron h3{
+    padding-bottom: 0.8rem;
+}
+.jumbotron p{
+    padding-bottom: 1rem;
+}
+
+h3.heading{
+    font-size: 1.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1.3rem;
+}
+.dataframe{
+    align-self: center;
+}
+/*--- Hemispheres ---*/
+.hemispics{
+    width: 100%;
+    margin: 1.5rem auto;
+    padding-top: 2rem;
+}
+.hemispics h1{
+    font-size: 2.4rem;
+}
+.hemispic{
+    max-width: 100%;
+}
+.hemisrow {
+    margin-bottom: 3rem;
+}
+/*--- Contact ---*/
+footer{
+    background-color: #40474e;
+    color: white;
+    padding: 3rem 0 2rem;
+    margin-top: 2rem;
+}
+.finale {
+    padding-bottom: 1.5rem;
+}
+.myname {
+    padding-top: 1rem;
+}
+hr.socket{
+    width: 100%;
+    border-top: .2rem solid #666b71;
+    margin-top: 2rem;
+}
+
+
+/*--- Media Queries ---*/
+@media (max-width: 767px) {
+    .navbar{
+        font-size: 0.5rem;
+        font-weight: 500;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        padding-top: .2rem;
+    }
+    .caption h1{
+        font-size: 1.5rem;
+        letter-spacing: .15rem;
+        padding-bottom: .5rem;
+    }
+    
+    .caption h3{
+        font-size: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    .btn-lg{
+        padding: .4rem .75rem;
+        font-size: .75rem;
+    }
+    .jumbotron h1{
+        font-size: 1.2rem;
+    }
+    .jumbotron h3{
+        font-size: .85rem;
+        padding-bottom: 0.6rem;
+    }
+    .jumbotron p{
+        font-size: .65rem;
+        padding-bottom: 1.2rem;
+    }
+    .jumbotron{
+        padding: 0.1rem 0 1.5rem;
+    }
+    .feat_img{
+        max-width: 75%;
+    }
+    .dataframe{
+        font-size: 0.65rem;
+        max-width: 100%;
+    }
+    .hemispic{
+        max-width: 75%;
+    }
+    .hemispics h1{
+        font-size: 1.2rem;
+    }
+    .hemispics h3{
+        font-size: 0.85rem;
+    }
+    .feat_img{
+        max-width: 100%;
+    }
+}
+
+
+  /*============ BOOTSTRAP BREAK POINTS:
+
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+=============*/

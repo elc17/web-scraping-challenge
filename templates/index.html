@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'mars.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'fixed.css') }}">
+</head>
+
+  <body data-spy="scroll" data-target="#navbarResponsive">
+
+    <!-- Home Section -->
+    <div id="home">
+
+    <!-- Navigation -->
+      <!-- Navbar-expand-md reduce la barra de navegación a partir de cierto tamaño de pantalla mínimo, bg=background, fixed-top hace que se mantenga en la parte de arriba-->
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <!-- navbar-brand permite agregar el típico logo del lado izquierdo que regresa al inicio-->
+        <a class="navbar-brand" href="#home">MISSION MARS</a>
+        <!-- Navbar-toggler permite que tenga estados, data-toggle=collapse permite que se abra y cierre, type=button permite presionarlo, data-target selecciona que expande y cierra -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+          <!-- Muestra el icono de tres lineas -->
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Muestra la información de la barra de navegación que se va a mostrar u ocultar dependiendo el tamaño de pantalla -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <!-- lista sin orden -->
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#data">Data</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#hemispheres">Hemispheres</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <!-- End of Navigation-->
+    
+    <!-- Landing Page -->
+      <div class="landing">
+        <div class="home-wrap">
+          <div class="home-inner">
+          </div>
+        </div>
+      </div>
+
+      <div class="caption text-center">
+        <h1>Welcome to Mars</h1>
+        <h3>Web Scraping</h3>
+        <a class="btn btn-outline-light btn-lg" href="/scrape">Begin</a>
+      </div>
+
+    </div>
+    <!-- End Home -->
+    
+    <!-- Data -->
+    <div id="data" class="offset">      
+      <!-- Jumbotron, adds lightgrey background -->
+      <div class="jumbotron">
+        <div class="row">
+        </div>
+        <div class='row text-center'>
+          <div class='col-md-8'>
+            <h1>Featured Image</h1>
+            <img class='feat_img' src = "{{ mars.featured_image }}">
+          </div>
+          <div class="col-md-4 text-center">
+            <!-- Mete el texto en una columna más angosta, permite usar col-12, centra el texto -->
+            <h1>Latest News</h1>
+            <h3>{{ mars.news_title }}</h3>
+            <!-- Crea un parrafo con texto mas ligero y más grande -->
+            <p class="lead">{{ mars.news_body }}</p>
+
+            <h1>Atmospheric conditions</h1>
+            <!-- Crea un parrafo con texto mas ligero y más grande -->
+            <p class="lead">{{ mars.weather }}</p>
+
+            <h1>Planet Profile</h1>
+            <table border="1" class="dataframe mystyle">
+              <thead>
+                <tr style="text-align: center;">
+                  <th>Data</th>
+                  <th>Values</th>
+                </tr>
+              </thead>
+              <tbody style = "text-align: center">
+                <tr>
+                  <th>Equatorial Diameter:</th>
+                  <td>6,792 km</td>
+                </tr>
+                <tr>
+                  <th>Polar Diameter:</th>
+                  <td>6,752 km</td>
+                </tr>
+                <tr>
+                  <th>Mass:</th>
+                  <td>6.39 x 10^23 kg (0.11 Earths)</td>
+                </tr>
+                <tr>
+                  <th>Moons:</th>
+                  <td>2 (Phobos &amp; Deimos)</td>
+                </tr>
+                <tr>
+                  <th>Orbit Distance:</th>
+                  <td>227,943,824 km (1.38 AU)</td>
+                </tr>
+                <tr>
+                  <th>Orbit Period:</th>
+                  <td>687 days (1.9 years)</td>
+                </tr>
+                <tr>
+                  <th>Surface Temperature:</th>
+                  <td>-87 to -5 °C</td>
+                </tr>
+                <tr>
+                  <th>First Record:</th>
+                  <td>2nd millennium BC</td>
+                </tr>
+                <tr>
+                  <th>Recorded By:</th>
+                  <td>Egyptian astronomers</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <!-- End Data -->
+
+    <!-- Hemispheres -->
+    <div id='hemispheres' class='offset hemispics'>
+      <h1 class='hemistitle text-center'>Mars Hemispheres Images</h1>
+      <div class='row hemisrow text-center'>
+        <div class='col-md-6 hemiscol'>
+          <h3>{{ mars.title_1 }}</h3>
+          <img class='hemispic' src = "{{ mars.image_url_1 }}">
+        </div>
+        <div class='col-md-6 hemiscol'>
+          <h3>{{ mars.title_2 }}</h3>
+          <img class='hemispic' src = "{{ mars.image_url_2 }}">
+        </div>
+      </div>
+      <div class='row hemisrow text-center'>
+        <div class='col-md-6 hemiscol'>
+          <h3>{{ mars.title_3 }}</h3>
+          <img class='hemispic' src = "{{ mars.image_url_3 }}">
+        </div>
+        <div class='col-md-6 hemiscol'>
+          <h3>{{ mars.title_4 }}</h3>
+          <img class='hemispic' src = "{{ mars.image_url_4 }}">
+        </div>
+    </div>
+    <!-- End Hemispheres -->
+
+    <!-- About -->
+    <div id="about" class="offset">
+
+      <footer>
+        <div class="row ending justify-content-center">
+          <div class="col-md-5 text-center">
+            <h3 class='finale'>Come back soon!</h3>
+            <strong>Creator</strong>
+            <p class='myname'>Ernesto Lopez Centeno<br>neto@lopezcenteno.com</p>
+          </div>
+          <hr class="socket">
+          &copy; ELC.
+        </div>
+      </footer>
+
+    </div>
+    <!-- End About -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+
+</html>
